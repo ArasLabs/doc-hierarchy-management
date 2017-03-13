@@ -1,0 +1,89 @@
+﻿<AML>
+ <Item type="Life Cycle Map" id="5897FA2934314BF0AFCC2C76F1DD3B9D" action="add">
+  <name>Document Hierarchy Node</name>
+  <start_state keyed_name="Preliminary" type="Life Cycle State">1C1A3EBB098B4DB29764F020F979E024</start_state>
+  <Relationships>
+   <Item type="Life Cycle State" id="966E0497040947A08D701C24E1AFE130" action="add">
+    <image>../images/icons/20x20/20x15_lifecycle.gif</image>
+    <item_behavior>fixed</item_behavior>
+    <label xml:lang="en">Obsolete</label>
+    <name>Obsolete</name>
+    <set_is_released>1</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <state_permission_id keyed_name="DocuHierarchy Node Obsolete" type="Permission">F83BFF4B504B444A92E30CE640158435</state_permission_id>
+    <x>323</x>
+    <y>40</y>
+   </Item>
+   <Item type="Life Cycle State" id="1C1A3EBB098B4DB29764F020F979E024" action="add">
+    <image>../images/icons/20x20/20x15_lifecycle.gif</image>
+    <item_behavior>float</item_behavior>
+    <label xml:lang="en">Preliminary</label>
+    <name>Preliminary</name>
+    <set_is_released>0</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <state_permission_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</state_permission_id>
+    <x>55</x>
+    <y>37</y>
+   </Item>
+   <Item type="Life Cycle State" id="1C64FCDA3E1E4EE9B6E49A928880E83A" action="add">
+    <image>../images/icons/20x20/20x15_lifecycle.gif</image>
+    <item_behavior>fixed</item_behavior>
+    <label xml:lang="en">Released</label>
+    <name>Released</name>
+    <set_is_released>1</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <state_permission_id keyed_name="DocuHierarchy Node Released" type="Permission">5C7B8CFB55544D42A05C2615B69120A1</state_permission_id>
+    <x>202</x>
+    <y>41</y>
+   </Item>
+   <Item type="Life Cycle Transition" id="453D5CBB45A146349E3785BC5534D1E7" action="add">
+    <from_state keyed_name="Preliminary" type="Life Cycle State">1C1A3EBB098B4DB29764F020F979E024</from_state>
+    <get_comment>0</get_comment>
+    <pre_action keyed_name="DocuHierarchy PreRelease Logic" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>DocuHierarchy PreRelease Logic</name>
+     </Item>
+    </pre_action>
+    <role keyed_name="Aras PLM" type="Identity">56A96DA9E981481688563E2D14D5D878</role>
+    <segments></segments>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <to_state keyed_name="Released" type="Life Cycle State">1C64FCDA3E1E4EE9B6E49A928880E83A</to_state>
+    <x>43</x>
+    <y>18</y>
+   </Item>
+   <Item type="Life Cycle Transition" id="DB29D2DD855343B7B6A8E00EF4559F7A" action="add">
+    <from_state keyed_name="Released" type="Life Cycle State">1C64FCDA3E1E4EE9B6E49A928880E83A</from_state>
+    <get_comment>0</get_comment>
+    <role keyed_name="Owner" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>Owner</name>
+     </Item>
+    </role>
+    <segments></segments>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <to_state keyed_name="Obsolete" type="Life Cycle State">966E0497040947A08D701C24E1AFE130</to_state>
+    <x>40</x>
+    <y>0</y>
+   </Item>
+  
+   <Item type="Life Cycle Transition" id="89C998F8AA1E4417B65CD33899F06B44" action="add">
+    <from_state keyed_name="Released" type="Life Cycle State">1C64FCDA3E1E4EE9B6E49A928880E83A</from_state>
+    <get_comment>0</get_comment>
+    <role keyed_name="Aras PLM" type="Identity">56A96DA9E981481688563E2D14D5D878</role>
+    <segments>141,12</segments>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="Document Hierarchy Node" type="Life Cycle Map">5897FA2934314BF0AFCC2C76F1DD3B9D</source_id>
+    <to_state keyed_name="Preliminary" type="Life Cycle State">1C1A3EBB098B4DB29764F020F979E024</to_state>
+    <x>-141</x>
+    <y>-37</y>
+   </Item></Relationships>
+ </Item>
+</AML>

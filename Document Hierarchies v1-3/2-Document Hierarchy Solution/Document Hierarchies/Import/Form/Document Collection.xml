@@ -1,0 +1,330 @@
+﻿<AML>
+ <Item type="Form" id="8A3DB7508DEA42A6A7D7303F998C033A" action="add">
+  <height>280</height>
+  <name>Document Collection</name>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>900</width>
+  <Relationships>
+   <Item type="Body" id="9A4AC38972B44ACCB6DB602E86DA2569" action="add">
+    <bg_attach>scroll</bg_attach>
+    <bg_color>#FFFFFF</bg_color>
+    <bg_image>../images/Backgrounds/wvleft.gif</bg_image>
+    <bg_repeat>no-repeat</bg_repeat>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Document Collection" type="Form">8A3DB7508DEA42A6A7D7303F998C033A</source_id>
+    <Relationships>
+     <Item type="Field" id="DBE87F8CA7164AD29BE8C17A10AE9A2A" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>class structure</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Classification</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>classification</name>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>40</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>65</x>
+      <y>50</y>
+     </Item>
+     <Item type="Field" id="2B6BEDB91DEE4089BF8AA47DD51BFA2A" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Description</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>description</name>
+      <propertytype_id keyed_name="description" type="Property">94B112FEF85E469FABB7CDA1C09ACBD3</propertytype_id>
+      <sort_order>1152</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>100</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>60</textarea_cols>
+      <textarea_rows>4</textarea_rows>
+      <x>200</x>
+      <y>50</y>
+     </Item>
+     <Item type="Field" id="8E9C7EB0EA2340A7A1ACB4C3F9864C03" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Doc Hierarchy Icon</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>document_hierarchy_icon</name>
+      <propertytype_id keyed_name="document_hierarchy_icon" type="Property">26F20350812843F3A9E77FF332955E6A</propertytype_id>
+      <sort_order>1536</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>100</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>205</x>
+      <y>130</y>
+     </Item>
+     <Item type="Field" id="F146AEF7B8CC4908BF7B9D6ED3C10A9D" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Doc Hierarchy Open Icon</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>document_hierarchy_icon_open</name>
+      <propertytype_id keyed_name="document_hierarchy_icon_open" type="Property">DCCCEE243AB74AE3A0D8C85938332BF4</propertytype_id>
+      <sort_order>1664</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>3584</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>325</x>
+      <y>130</y>
+     </Item>
+     <Item type="Field" id="A45C545368C242A5A06D346ADD52C74C" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = top.aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.attachEvent('onload', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <name>item_info</name>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <z_index>-1</z_index>
+     </Item>
+     <Item type="Field" id="02DFF7D513454293819AFE76FFB1E1DC" action="add">
+      <border_width>0</border_width>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Number</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>item_number</name>
+      <propertytype_id keyed_name="item_number" type="Property">BEACD42F17C5465FB1B1A7EFD2F11976</propertytype_id>
+      <sort_order>2048</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>9</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>65</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="3FF6B8AE0A4C4C0BBB34AA4345ACB20B" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <display_length>1</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Rev</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>major_rev</name>
+      <sort_order>1280</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>20</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>540</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="88250328D72647DEAD037F6C27E13E56" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <display_length>30</display_length>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Co-Owners</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>managed_by_id</name>
+      <sort_order>1408</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>100</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>540</x>
+      <y>130</y>
+     </Item>
+     <Item type="Field" id="F7AFE5E327AB4C92996278DFD907D44B" action="add">
+      <bg_color>beige  </bg_color>
+      <border_width>0</border_width>
+      <display_length>60</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Name</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>name</name>
+      <propertytype_id keyed_name="name" type="Property">2CC40081E8804FC0AB0D9BA332193BC8</propertytype_id>
+      <sort_order>1024</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>10</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>200</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="43C9FBAC3F1E4B2D96A343BA71083369" action="add">
+      <bg_color>beige  </bg_color>
+      <border_width>0</border_width>
+      <display_length>30</display_length>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Owner</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>owned_by_id</name>
+      <sort_order>640</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>30</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>540</x>
+      <y>90</y>
+     </Item>
+     <Item type="Field" id="9136F8C3CE62481A8D2D9312F1F18B80" action="add">
+      <border_width>0</border_width>
+      <field_type>date</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Release Date</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>release_date</name>
+      <sort_order>2176</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>100</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>540</x>
+      <y>50</y>
+     </Item>
+     <Item type="Field" id="39EC95F8A2DE4B4698E5D83EDADE9B69" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Status</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>state</name>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="9A4AC38972B44ACCB6DB602E86DA2569" type="Body">9A4AC38972B44ACCB6DB602E86DA2569</source_id>
+      <tab_index>50</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>580</x>
+      <y>10</y>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="Field" id="DBE87F8CA7164AD29BE8C17A10AE9A2A" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>classification</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="3FF6B8AE0A4C4C0BBB34AA4345ACB20B" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>major_rev</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="88250328D72647DEAD037F6C27E13E56" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>managed_by_id</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="43C9FBAC3F1E4B2D96A343BA71083369" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>owned_by_id</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="9136F8C3CE62481A8D2D9312F1F18B80" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>release_date</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="39EC95F8A2DE4B4698E5D83EDADE9B69" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>state</name>
+    <source_id type="ItemType" keyed_name="Document Collection">27B5EEB33D2E433CB78F983F9233F44F</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+</AML>

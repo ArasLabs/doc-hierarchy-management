@@ -1,0 +1,41 @@
+﻿<AML>
+ <Item type="ItemType" id="13EC84A626F1457BB5F60A13DA03580B" action="add">
+  <name>FileType</name>
+  <Relationships>
+   <Item type="Property" id="4655EBAED00546EBA545F0ABEABF56C8" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>image</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Large Icon</label>
+    <name>large_icon</name>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>4736</sort_order>
+    <source_id keyed_name="FileType" type="ItemType" name="FileType">13EC84A626F1457BB5F60A13DA03580B</source_id>
+    <track_history>0</track_history>
+   </Item>
+   <Item type="Property" id="B7E2FC2B27D44E4C9A65D7CC30937423" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>image</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Small Icon</label>
+    <name>small_icon</name>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>4608</sort_order>
+    <source_id keyed_name="FileType" type="ItemType" name="FileType">13EC84A626F1457BB5F60A13DA03580B</source_id>
+    <track_history>0</track_history>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

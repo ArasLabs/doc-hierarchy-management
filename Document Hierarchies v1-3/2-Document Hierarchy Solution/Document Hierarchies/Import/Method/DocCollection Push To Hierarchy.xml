@@ -1,0 +1,84 @@
+﻿<AML>
+ <Item type="Method" id="95A4BA910672437BAD64E454E35F123D" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA['MethodTemplateName=VBMain;
+Dim res As Item
+Dim inn As Innovator
+
+Function Main() As Item
+  'System.Diagnostics.Debugger.Break()
+
+  Dim thisItemType As String = Me.GetType()
+  Dim thisItemId As String = Me.GetID()
+  inn = Me.getInnovator()
+
+  ' get all top DocNodes linked to this Document Collection
+  Dim amlCmd As String = "<Item type='Document Collection DocNodes' action='get' serverEvents='0' "
+  amlCmd = amlCmd & "select='sort_order,source_id(id,name,generation),related_id(id,name,generation)' >"
+  amlCmd = amlCmd & "<source_id>" & Me.GetID() & "</source_id>"
+  amlCmd = amlCmd & "</Item>"
+ 
+  Dim topDocNodeItems As Item = inn.newItem("","")
+  topDocNodeItems.loadAML(amlCmd)
+
+  topDocNodeItems = topDocNodeItems.apply()
+  Dim i As Integer
+  For i=0 To topDocNodeItems.getItemCount()-1
+  	
+    Dim allChildIds As String = fn_GetNodeIdsOfHierarchyDown(topDocNodeItems.getItemByIndex(i).getRelatedItem())
+    ' add id of top docNode (type = Document Hierarchy Node)
+    allChildIds = "'" & allChildIds.Replace(",","','") & "'" & ",'" & topDocNodeItems.getItemByIndex(i).getProperty("related_id","") & "'"
+
+    res = fn_UpdateAllChildItemsWithDataFromDocCollection(Me,allChildIds) 
+    If res.isError() Then Return res
+  Next i
+  
+  Return Me
+End Function
+
+'-----------
+Private Function fn_UpdateAllChildItemsWithDataFromDocCollection (ByRef docCollectionItem As Item, ByRef childIds As String) As Item
+  Dim SQLstr As String
+  Dim updateValue As String
+  Dim tableName As String = "[" & CCO.DB.GenerateTableName("Document Hierarchy Node") & "]"
+
+  SQLstr = "UPDATE " & tableName
+
+  SQLstr = SQLstr & " SET " & tableName & ".header_item_id_string='" & docCollectionItem.getID() & "'"
+  SQLstr = SQLstr & "," & tableName & ".header_item_type='" & docCollectionItem.GetType() & "'"
+
+  ' inherit data from docCollectionItem
+  updateValue = docCollectionItem.getProperty("name","Null")
+  If updateValue <> "Null" Then updateValue = "'" & updateValue & "'"  
+  SQLstr = SQLstr & "," & tableName & ".header_item_name=" & updateValue
+
+  Dim propsToCopy As String() = {"managed_by_id","team_id"}
+
+  Dim i As Integer
+  For i=0 To propsToCopy.Length-1
+    updateValue = docCollectionItem.getProperty(propsToCopy(i),"Null")
+    If updateValue <> "Null" Then updateValue = "'" & updateValue & "'"  
+    SQLstr = SQLstr & "," & tableName & "." & propsToCopy(i) & "=" & updateValue
+  Next i
+
+  SQLstr = SQLstr & " WHERE " & tableName & ".id in (" & childIds & ")"
+  res= Me.getInnovator().applySQL(SQLstr)
+  If res.isError() Then Return res   
+
+  Return Me
+End Function
+
+'-----------
+Private Function fn_GetNodeIdsOfHierarchyDown (ByRef nodeItem As Item) As String
+	
+  nodeItem.setAttribute("relationshipName","Document Hierarchy")
+  res = nodeItem.apply("Get ItemIDs of Structure Down") 'generic method from Common Utitities
+  If res.isError() Then Return ""
+  
+  Return res.getResult()
+End Function
+]]></method_code>
+  <method_type>VB</method_type>
+  <name>DocCollection Push To Hierarchy</name>
+ </Item>
+</AML>

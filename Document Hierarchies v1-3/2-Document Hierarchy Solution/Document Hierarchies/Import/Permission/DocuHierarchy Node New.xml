@@ -1,0 +1,86 @@
+﻿<AML>
+ <Item type="Permission" id="2D9544E22BA64843806F258CD615170A" action="add">
+  <is_private>0</is_private>
+  <name>DocuHierarchy Node New</name>
+  <Relationships>
+   <Item type="Access" id="1EC44FACDB504FF990603DDAB16966EB" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item>
+   <Item type="Access" id="B3FEB1DB934241038A01EDDF5DFEAFB5" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Aras PLM" type="Identity">56A96DA9E981481688563E2D14D5D878</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item>
+   <Item type="Access" id="FFA514759385422AAEF4DA3A8541EE4A" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Creator" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>Creator</name>
+     </Item>
+    </related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item>
+  
+   <Item type="Access" id="4ECF67744F324021B57371F85AF29548" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="Document Collection Management" type="Identity">6D6016A0DF404AC280C971F041E4DE88</related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>896</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item>
+   <Item type="Access" id="171C32435E4A4820B6B3BA1E2CB4A013" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="Manager" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>Manager</name>
+     </Item>
+    </related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item>
+   <Item type="Access" id="A7B9BBA7568144F98ABF40F54E88A337" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Owner" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>Owner</name>
+     </Item>
+    </related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="DocuHierarchy Node New" type="Permission">2D9544E22BA64843806F258CD615170A</source_id>
+   </Item></Relationships>
+ </Item>
+</AML>

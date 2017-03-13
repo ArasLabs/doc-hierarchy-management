@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="6CC425B528664A27A4B7B0E90FD0BB9B" action="add">
+  <item_query>&lt;Item type="{@type}" id="{@id}" levels= "1" action="get" /&gt;</item_query>
+  <label xml:lang="en">Release Hierarchy Nodes (down)</label>
+  <location>client</location>
+  <method keyed_name="DocuHierarchy StructReleas DownA" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>DocuHierarchy StructReleas DownA</name>
+   </Item>
+  </method>
+  <name>Document Hierarchy Manual Release</name>
+  <target>none</target>
+  <type>item</type>
+ </Item>
+</AML>

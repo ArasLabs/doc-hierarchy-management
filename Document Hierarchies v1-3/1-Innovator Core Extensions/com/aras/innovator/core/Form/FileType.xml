@@ -1,0 +1,54 @@
+﻿<AML>
+ <Item type="Form" id="D8443C08E2F745EEABA66550124B347C" action="add">
+  <name>FileType</name>
+  <Relationships>
+   <Item type="Body" id="B0AEA8269BB4475BA7899387BD83897C" action="add">
+    <source_id keyed_name="FileType" type="Form">D8443C08E2F745EEABA66550124B347C</source_id>
+    <Relationships>
+     <Item type="Field" id="EF57DAFA05994A07ADEBD5B3896FE99E" action="add">
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Large Icon</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>large_icon</name>
+      <propertytype_id keyed_name="large_icon" type="Property">4655EBAED00546EBA545F0ABEABF56C8</propertytype_id>
+      <sort_order>1024</sort_order>
+      <source_id keyed_name="B0AEA8269BB4475BA7899387BD83897C" type="Body">B0AEA8269BB4475BA7899387BD83897C</source_id>
+      <tab_index>4736</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>545</x>
+      <y>100</y>
+     </Item>
+     <Item type="Field" id="5599DE812B9448D7B1392B846953911C" action="add">
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Small Icon</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>small_icon</name>
+      <propertytype_id keyed_name="small_icon" type="Property">B7E2FC2B27D44E4C9A65D7CC30937423</propertytype_id>
+      <sort_order>896</sort_order>
+      <source_id keyed_name="B0AEA8269BB4475BA7899387BD83897C" type="Body">B0AEA8269BB4475BA7899387BD83897C</source_id>
+      <tab_index>4608</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>545</x>
+      <y>50</y>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

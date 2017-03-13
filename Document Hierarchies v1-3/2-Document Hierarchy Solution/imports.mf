@@ -1,0 +1,4 @@
+<imports>
+  <package name="Document Hierarchies" path="Document Hierarchies\Import" />
+  <package name="com.aras.innovator.solution.PLM" path="PLM\Import" />
+</imports>

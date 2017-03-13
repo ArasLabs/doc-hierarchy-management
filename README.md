@@ -27,7 +27,7 @@ Release notes/descriptions for the original project posted on the previous Aras 
 
 Release | Notes
 --------|--------
-[v1.3](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v1.3) | Initial version
+[v1.3](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v1.3) | add-on import package and conceptual overview document. (imports on top of standard Aras Solutions)
 
 #### Supported Aras Versions
 

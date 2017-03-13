@@ -1,0 +1,177 @@
+﻿<AML>
+ <Item type="Method" id="67018200F957472F8CAD515D4DAA6274" action="add">
+  <comments>on AfterVersion</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA['
+' called from event "onAfterVersion" of version controlled items
+'
+' if this item is versioned it floats the item property that points to another versioned item
+' to the latest generation of this referenced item.
+'
+' NOTE: The item properties affecet by this logic must be configured with behavior "hard_fixed" !!!
+'
+' This applies only to registered source ItemTypes  (see Select lines below)
+'
+' Example:
+' itemType Part has item property with behaviour 'fixed' to itemType Substance
+' if substance is also a versionable item, then this method must be used
+'
+' if Substance gets versioned all Parts, that are not released, linking to the old version of the substance
+' will be updated to link to the new version of the substance.
+'
+'
+'MethodTemplateName=VBMain;
+Dim inn As Innovator = Me.getInnovator()
+Dim relatedItemPropsToFloat As String() ' make sure item properties listed here have behaviour = "fixed"
+Dim relatedItemPropsItemTypes As String()
+Dim newVerItem As Item
+Dim Res As Item
+
+Function Main() As Item
+  'System.Diagnostics.Debugger.Break()
+  Dim thisItemId As String = Me.getId()
+  Dim thisItemType As String = Me.getAttribute("type")
+  Dim thisItemConfigId As String = Me.getProperty("config_id","")
+  
+  'if this is new version on item linked to, do this...
+  Res = FloatPropertiesOnItemsReferencingThisItem (thisItemType,thisItemId,thisItemConfigId)
+  If (Res.isError()) Then Return Res
+  
+  'if this is new version on item linking to other items, do this...
+  Res = FloatPropertiesOnThisItemToLatestGenOfReferencedItems (thisItemType,thisItemId,thisItemConfigId)
+  If (Res.isError()) Then Return Res
+  
+
+  Return Me
+End Function
+
+'----------
+Private Function RetrieveNewVersionItem (thisItemType As String,thisConfigId As String, ByRef newVerItem As Item) As Item
+  ' Retrieve the id of the new version of thisItem
+  newVerItem = Me.newItem(thisItemType,"get")
+  newVerItem.setAttribute("select","*")
+  newVerItem.setProperty("config_id",thisConfigId)
+  newVerItem = newVerItem.apply()
+  If (newVerItem.getItemCount() <> 1) Then Return inn.newError("New version not found")
+
+  Return Me
+End Function
+
+'----------
+Private Function FloatPropertiesOnItemsReferencingThisItem (thisItemType As String,thisItemId As String,thisConfigId As String) As Item
+  Select (thisItemType)
+    '-------
+    Case "Document Hierarchy Node"  '<-- on this ItemType add ServerEvent "onAfterVersion" with this method
+	  'only apply logic, if thisItem is root of a hierarchy
+	  If Me.getProperty("is_root","0") = "0" Then Return Me 'nothing to do
+      relatedItemPropsItemTypes = New String(){"Document Collection"}
+      relatedItemPropsToFloat = New String(){"top_hierarchy_node_id"}
+   Case Else
+	  Return Me ' nothing to do
+  End Select
+
+  Res = RetrieveNewVersionItem (thisItemType,thisConfigId,newVerItem)
+  If (Res.isError()) Then Return Res
+  Dim oldId As String = thisItemId
+  
+  Res = FloatDefinedRelatedItemProperties (newVerItem, oldId)
+  If (Res.isError()) Then Return Res
+
+  Return Me
+End Function
+
+'----------
+Private Function FloatPropertiesOnThisItemToLatestGenOfReferencedItems (thisItemType As String,thisItemId As String,thisConfigId As String) As Item
+  'System.Diagnostics.Debugger.Break()
+  Select (thisItemType)
+    '-------
+    Case "Document Collection"  '<-- on this ItemType add ServerEvent "onAfterVersion" with this method
+      relatedItemPropsItemTypes = New String(){"Document Hierarchy Node"}
+      relatedItemPropsToFloat = New String(){"top_hierarchy_node_id"}
+   Case Else
+	  Return Me ' nothing to do
+  End Select
+
+  Res = RetrieveNewVersionItem (thisItemType,thisConfigId,newVerItem)
+  If (Res.isError()) Then Return Res
+  
+  Dim p As Integer
+  For p=0 To relatedItemPropsToFloat.Length -1
+    Dim propName As String = relatedItemPropsToFloat(p)
+    Dim propItemType As String = relatedItemPropsItemTypes(p)
+    
+    Dim newPropIdValue As String = ""
+    Dim propIdValue As String = Me.getProperty(propName,"")
+    If propIdValue <> "" Then
+      Dim itm As Item = Me.newItem(propItemType,"")
+      itm.SetID(propIdValue)
+      'float To latest id - method from Common Utilities
+      itm = itm.apply("Get ItemID Of Current Gen")
+      newPropIdValue = itm.getProperty("id","")
+      'update new version item with floated id
+      Dim TN As String = "[" & thisItemType.Replace(" ","_") & "]"
+      Dim SQLstr As String = "UPDATE " & TN & " SET "
+      SQLstr = SQLstr & TN & "." & propName & "='" & newPropIdValue & "'"
+      SQLstr = SQLstr & " WHERE " & TN & ".id='" & newVerItem.GetID & "'"
+      Res = inn.applySQL(SQLstr)
+      If (Res.isError()) Then Return Res
+      
+      'newVerItem.setProperty(propName,newPropIdValue)
+    End If   
+  Next p
+  
+  Return Me
+End Function
+
+'----------
+Private Function FloatDefinedRelatedItemProperties (ByRef newVerItem As Item, oldId As String) As Item	
+  If relatedItemPropsToFloat(0) = "" Then Return inn.newResult("OK") ' nothing to do
+  
+  ' Grant 'Aras PLM' permissions for the merge call
+  Dim plmIdentity As Aras.Server.Security.Identity = Aras.Server.Security.Identity.GetByName("Super User")
+  Dim PermissionWasSet As Boolean  = Aras.Server.Security.Permissions.GrantIdentity(plmIdentity)
+
+  Dim newVerItemId As String = newVerItem.getID()
+
+  Dim p As Integer
+  For p=0 To relatedItemPropsToFloat.Length -1
+    Dim propName As String = relatedItemPropsToFloat(p)
+    Dim propItemType As String = relatedItemPropsItemTypes(p)
+    Dim relItemId As String = newVerItem.getProperty(propName,"")
+    Dim relItems As Item = Me.newItem(propItemType,"get")
+    relItems.setAttribute("where",propName & "='" & oldId & "'")
+    relItems.setAttribute("select","id,is_released," & propName)
+    relItems.setAttribute("is_current","1")
+    relItems.setAttribute("serverEvents","0")
+    relItems.setAttribute("doGetItem","0")
+    relItems = relItems.apply()
+    
+    Dim i As Integer
+    For i=0 To relItems.getItemCount() -1
+      Dim relItem As Item = relItems.getItemByIndex(i)
+      
+      If (relItem.getProperty("is_released","") <> "1") Then
+       If relItem.getLockStatus() = 0 Then relItem.setAction("edit")
+       If relItem.getLockStatus() = 1 Then relItem.setAction("update")
+      
+       If newVerItemId <> "" Then
+        relItem.setAttribute("version","0")
+        relItem.setAttribute("doGetItem","0")
+        relItem.setAttribute("serverEvents","0")
+        relItem.setProperty(propName,newVerItemId)
+        relItem = relItem.apply()
+       End If
+     End If
+    Next i
+  Next p
+
+  'Revoke 'Aras PLM' permissions
+  If (PermissionWasSet) Then Aras.Server.Security.Permissions.RevokeIdentity(plmIdentity)
+ 
+ Return inn.newResult("OK")
+End Function
+]]></method_code>
+  <method_type>VB</method_type>
+  <name>Float DocuHierarchy Link Unrelsd</name>
+ </Item>
+</AML>

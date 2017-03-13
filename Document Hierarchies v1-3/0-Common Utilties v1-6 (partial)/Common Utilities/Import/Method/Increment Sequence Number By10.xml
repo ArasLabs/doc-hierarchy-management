@@ -1,0 +1,30 @@
+﻿<AML>
+ <Item type="Method" id="D59E08A5414C41B9BE1C4170E0DEB84F" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var NewRels = parent.item.selectNodes("Relationships/Item[@type='"+relationshipTypeName+"' and @isTemp='1']");
+if (!NewRels || NewRels.length<2) {
+  top.aras.getItemRelationshipsEx(parent.item,relationshipTypeName);
+}
+var maxVal = 0;
+var Rels = parent.thisItem.getRelationships(relationshipTypeName);
+var count = Rels.getItemCount();
+for (var i=0; i<count; ++i) {
+  var Rel = Rels.getItemByIndex(i);
+  var sort_order = Rel.getProperty("sort_order");
+  if (Number(sort_order) > Number(maxVal)) {
+    maxVal = sort_order;
+  }
+}
+var thisItem = parent.thisItem;
+var thisRel = thisItem.getItemsByXPath("//Item[@id='" + relationshipID + "']").getItemByIndex(0);
+//increment by 10 instead of 1
+thisRel.setProperty("sort_order",Number(maxVal)+10);
+
+var objwin = top.aras.uiFindWindowEx(thisItem.getID());
+if (objwin) {
+  objwin.updateRootItem(parent.item);  // refresh grid with new entries
+}]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>Increment Sequence Number By10</name>
+ </Item>
+</AML>

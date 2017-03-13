@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="450B1BEEB23D4ECEB1436825317CD866" action="add">
+  <item_query>&lt;Item type="{@type}" id="{@id}" levels= "1" action="get" /&gt;</item_query>
+  <label xml:lang="en">Revise Hierarchy Nodes (up)</label>
+  <location>client</location>
+  <method keyed_name="DocuHierarchy StructRevise UpA" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>DocuHierarchy StructRevise UpA</name>
+   </Item>
+  </method>
+  <name>Document Hierarchy Manual Revision</name>
+  <target>none</target>
+  <type>item</type>
+ </Item>
+</AML>

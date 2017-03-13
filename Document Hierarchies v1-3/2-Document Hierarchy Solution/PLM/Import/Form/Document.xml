@@ -1,0 +1,33 @@
+﻿<AML>
+ <Item type="Form" id="D95D1B10CE6D47CDB7AE755108DBA13D" action="add">
+  <name>Document</name>
+  <Relationships>
+   <Item type="Body" id="1616C23245254BAD80BECBEC29A02D16" action="add">
+    <source_id keyed_name="Document" type="Form">D95D1B10CE6D47CDB7AE755108DBA13D</source_id>
+    <Relationships>
+     <Item type="Field" id="CB002CAE9C3A441FB6FD6A77DD4A86AD" action="add">
+      <border_width>0</border_width>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Published File Type</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>published_file_type</name>
+      <propertytype_id keyed_name="published_file_type" type="Property">EF2F679CBC3F400CBE6D4D554E166C85</propertytype_id>
+      <sort_order>5248</sort_order>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <tab_index>103712</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>569</x>
+      <y>182</y>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

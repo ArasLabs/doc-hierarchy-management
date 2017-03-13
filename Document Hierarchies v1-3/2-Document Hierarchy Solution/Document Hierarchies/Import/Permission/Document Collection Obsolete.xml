@@ -1,0 +1,56 @@
+﻿<AML>
+ <Item type="Permission" id="B7B4B0E0B127484CAF9D249537DC1123" action="add">
+  <is_private>0</is_private>
+  <name>Document Collection Obsolete</name>
+  <Relationships>
+   <Item type="Access" id="DC9A795366554535B52E34395E6160F2" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="Document Collection Obsolete" type="Permission">B7B4B0E0B127484CAF9D249537DC1123</source_id>
+   </Item>
+  
+   <Item type="Access" id="D49CFDC1F7F347478102CB35FFD59CFF" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Aras PLM" type="Identity">56A96DA9E981481688563E2D14D5D878</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="Document Collection Obsolete" type="Permission">B7B4B0E0B127484CAF9D249537DC1123</source_id>
+   </Item>
+   <Item type="Access" id="10B7B23FE8C646E785A8D7189F1F9114" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="Owner" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>Owner</name>
+     </Item>
+    </related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Document Collection Obsolete" type="Permission">B7B4B0E0B127484CAF9D249537DC1123</source_id>
+   </Item>
+   <Item type="Access" id="18F78CF739824198ADA5CC05DF35CA8C" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="Team Manager" type="Identity">60EBF9D1BB584921A73FA2F8D74DAF80</related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="Document Collection Obsolete" type="Permission">B7B4B0E0B127484CAF9D249537DC1123</source_id>
+   </Item></Relationships>
+ </Item>
+</AML>

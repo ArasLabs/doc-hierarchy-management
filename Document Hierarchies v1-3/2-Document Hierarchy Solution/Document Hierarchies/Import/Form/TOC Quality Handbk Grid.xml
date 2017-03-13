@@ -1,0 +1,203 @@
+﻿<AML>
+ <Item type="Form" id="FCEFA7FF5B2B430FB0FCE6776B49A759" action="add">
+  <name>TOC Quality Handbk Grid</name>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <Relationships>
+   <Item type="Body" id="2574082F4454479CBC346D18379C80DF" action="add">
+    <sort_order>128</sort_order>
+    <source_id keyed_name="TOC Quality Handbk Grid" type="Form">FCEFA7FF5B2B430FB0FCE6776B49A759</source_id>
+    <Relationships>
+     <Item type="Field" id="4BB484A3AFA94302BDBDF5722E4D8A65" action="add">
+      <bg_color>#FFFFFF</bg_color>
+      <border_width>0</border_width>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<script>
+// HTML skeleton -- single html field on form to be used for "TOC View" on an ItemType
+//
+//  ---- history -----
+//
+// ====================================================================================================================
+var toolbar1_Control = null;
+var treeGrid1_Control = null;
+var treeGrid1_MsgsId;
+var thisItem = undefined;
+
+var innovator = new top.Innovator();
+var I18Ncntx = document.thisItem? document.thisItem.newItem.getInnovator().getI18NSessionContext() : null;
+var OnLoadMethodsLoaded = false;
+
+top.aras.uiAddConfigLink2Doc4Assembly(document, "TreeTable");
+top.aras.uiAddConfigLink2Doc4Assembly(document, "Toolbar");
+
+// ====================================================================================================================
+function initGrid1() {
+	var itemTypeName = "TOC Quality HandBook";
+
+    inittoolbar1_Control(itemTypeName);
+    if (!window.RefreshGrid)  // this function must reside in one of the handlers loaded with the Form (onLoad)
+	{
+		setTimeout('initGrid1()',10);
+		return;
+	}
+	//debugger;
+	var res = window.RefreshGrid(true, thisItem, itemTypeName);
+	fixGridHeight();
+}
+
+function inittoolbar1_Control(itemTypeName) {
+    initFormOnLoadMethods();
+
+	if (!window.loadGridToolbarHTML(itemTypeName)) {
+     initFormOnLoadMethods();
+	}
+	var res = window.loadGridToolbarHTML();  // this function must reside in one of the handlers loaded with the Form (onLoad)
+    toolbar1_Control.show();
+}
+function initFormOnLoadMethods() {
+  try { onload1(); } catch (excep) { }  //handler method must be attached to 1st onLoad event of this Form
+  try { onload2(); } catch (excep) { }  //handler method must be attached to 2nd onLoad event of this Form
+  OnLoadMethodsLoaded = true;
+}
+
+var onresize_handler = function ()
+{
+	fixGridHeight();
+}
+
+function fixGridHeight()
+{
+	var el = document.getElementById("treeGrid1");
+	top.aras.fixLiquidContainerHeight(document, el);
+	el = document.getElementById("grid_td");
+	top.aras.fixLiquidContainerHeight(document, el);
+}
+
+window.attachEvent("onresize", onresize_handler);	
+
+</script>
+
+<script language="jscript" for="treeGrid1" event="GridStart(isSuccess)">
+		treeGrid1_Control=document.treeGrid1;
+		initGrid1();
+</script>
+<script language="jscript" for="toolbar1" event="Onload()">
+		toolbar1_Control = document.toolbar1;
+</script>
+<script type="text/javascript" for="toolbar1" event="Onclick(tbItem)">
+	toolbar1_onToolbarClick(tbItem);
+</script>
+<script type="text/javascript" for="toolbar1" event="OnChange(tbItem)">
+	toolbar1_onToolbarOnChange(tbItem);
+</script>
+
+<script type="text/javascript" for="treeGrid1" event="GridClick(rowId, col)">
+	treeGrid1_onGridClick(rowId, col);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridDoubleClick(rowId)">
+	treeGrid1_onGridDoubleClick(rowId);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridLinkClick(strLink)">
+	treeGrid1_onGridLinkClick(strLink);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridMenuInit(rowId, col, p)">
+	treeGrid1_onGridMenuInit(rowId, col, p);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridMenuClick(m, rowId, col)">
+	treeGrid1_onGridMenuClick(m);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridEditCell(mode, rowID, col)">
+	return treeGrid1_onGridEditCell(mode, rowID, col);
+</script>
+<script type="text/javascript" for="treeGrid1" event="GridKeyPress(kEv)">
+	return true;
+</script>
+<script type="text/javascript" for="treeGrid1" event="TreeGridCloseNode(rowID)">
+	return true;
+</script>
+<script type="text/javascript" for="treeGrid1" event="TreeGridOpenNode(rowID)">
+	return treeGrid1_onTreeGridOpenNode(rowID);
+</script>
+
+<style>
+   html, body
+	{
+	  margin: 0;
+	  padding: 0;
+	  height: 100%;
+	  width: 100%;
+	  border: none;
+	}
+	.sys_f_container
+	{
+	  position:absolute; 
+	  top:0px; 
+	  left:0px;
+	  width: 100%;
+	  height: 100%;
+	}
+	.sys_f_table
+	{
+	  position:absolute; 
+	  top:0px; left:0px;
+	  width: 100%;
+	  height: 100%;
+	}
+</style>
+
+<table id="grid1Table" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 100%; table-layout: fixed;" >
+	<tr id="grid1ToolbarRow" style="vertical-align: top;">
+		<td style="width: 100%; height: 28px;">
+			<object id="toolbar1" style="width: 100%; height: 28px; display: block;"
+					classid="../cbin/Toolbar.dll#Aras.Client.Controls.Toolbar" >
+			</object>
+		</td>
+	</tr>
+	<tr id="grid1TreeRow" style="vertical-align: top;">
+		<td id="grid_td" style="width: 100%; height: 100%;">
+			<object id="treeGrid1" style="height: 100%; width: 100%; display: block;"
+				classid="../cbin/TreeTable.dll#Aras.Client.Controls.TreeGridContainer">
+			</object>
+		</td>
+	</tr>
+</table>
+]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>html_document_hierarchy_grid</name>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="2574082F4454479CBC346D18379C80DF" type="Body">2574082F4454479CBC346D18379C80DF</source_id>
+      <tab_stop>1</tab_stop>
+      <x>0</x>
+      <y>0</y>
+     </Item>
+    </Relationships>
+   </Item>
+   <Item type="Form Event" id="6E75A1648DD34C63894AEA87555350BE" action="add">
+    <form_event>onload</form_event>
+    <related_id keyed_name="Common Grid Handler Funcs" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>Common Grid Handler Funcs</name>
+     </Item>
+    </related_id>
+    <sort_order>1</sort_order>
+    <source_id keyed_name="TOC Quality Handbk Grid" type="Form">FCEFA7FF5B2B430FB0FCE6776B49A759</source_id>
+   </Item>
+   <Item type="Form Event" id="9A0206A5BCD44BF5B583350182C8DE42" action="add">
+    <form_event>onload</form_event>
+    <related_id keyed_name="Document Hierarchy Grid Handler" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>Document Hierarchy Grid Handler</name>
+     </Item>
+    </related_id>
+    <sort_order>2</sort_order>
+    <source_id keyed_name="TOC Quality Handbk Grid" type="Form">FCEFA7FF5B2B430FB0FCE6776B49A759</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>
