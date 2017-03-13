@@ -1,0 +1,27 @@
+﻿<AML>
+ <Item type="List" id="6D4CC0F56C2043328A4C5C2B2F6424E1" action="add">
+  <description>values must be the code of all registered languages !
+in capital letters !!</description>
+  <name>Section Documents Language Codes</name>
+  <Relationships>
+   <Item type="Value" id="4E9F7E74DB1C43F398B5B3C8B060F76D" action="add">
+    <label xml:lang="en">ALL</label>
+    <sort_order>5</sort_order>
+    <source_id keyed_name="Section Documents Language Codes" type="List">6D4CC0F56C2043328A4C5C2B2F6424E1</source_id>
+    <value>ALL</value>
+   </Item>
+   <Item type="Value" id="11EA9860E627423BBBE3FE151342B313" action="add">
+    <label xml:lang="en">DE</label>
+    <sort_order>20</sort_order>
+    <source_id keyed_name="Section Documents Language Codes" type="List">6D4CC0F56C2043328A4C5C2B2F6424E1</source_id>
+    <value>DE</value>
+   </Item>
+  
+   <Item type="Value" id="3C7282E3D6724C9F8A1FC1F5A0A25DB6" action="add">
+    <label xml:lang="en">EN</label>
+    <sort_order>10</sort_order>
+    <source_id keyed_name="Section Documents Language Codes" type="List">6D4CC0F56C2043328A4C5C2B2F6424E1</source_id>
+    <value>EN</value>
+   </Item></Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,9 @@
+<AML>
+<!-- Float DocuHierarchy Link Unrelsd - on Book -->
+   <Item type="Server Event" id="1201FF4A0C544D87AAEB929374921DE5" action="delete" />
+<!-- Link DocuHierarchy to HeaderItem - on Book -->
+   <Item type="Server Event" id="247C3A309C8F4211A0FEDA6CADBEFA02" action="delete" />
+   <Item type="Server Event" id="66BFB5AA78F4403D9C4BB05C8FFEBEC6" action="delete" />
+ <!-- Float DocuHierarchy Link Unrelsd  on Section -->
+      <Item type="Server Event" id="DD7B6B2FCA7945ADB798542BA18D024B" action="delete" />
+</AML>

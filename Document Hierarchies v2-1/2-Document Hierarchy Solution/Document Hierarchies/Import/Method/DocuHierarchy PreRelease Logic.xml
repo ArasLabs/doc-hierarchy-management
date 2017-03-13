@@ -1,0 +1,45 @@
+﻿<AML>
+ <Item type="Method" id="7CB1829822C94DDCAE32E6E9FDD86959" action="add">
+  <comments>triggered from lifecycle pre-transitions</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Dim thisItem As Item = Me
+'System.Diagnostics.Debugger.Break()
+
+' promote all unreleased child Nodes to "Released" --
+Dim docHierarchyRels As Item = Me.newItem("","")
+Dim amlCmd As String = "<Item type='Document Hierarchy' action='get' serverEvents='0' >"
+amlCmd = amlCmd & "<source_id>" & Me.GetID() & "</source_id>"
+amlCmd = amlCmd & "<related_id><Item type='Document Section' action='get' serverEvents='0' >"
+amlCmd = amlCmd & "<is_released>0</is_released></Item></related_id>"
+amlCmd = amlCmd & "</Item>"
+docHierarchyRels.loadAML(amlCmd)
+docHierarchyRels = docHierarchyRels.apply()
+
+Dim i As Integer
+Dim promoteItem As Item = Me.newItem("","")
+
+Dim suIdentityWasGranted As Boolean
+Dim suIdentity As Aras.Server.Security.Identity 
+suIdentity = Aras.Server.Security.Identity.GetByName("Aras PLM")
+suIdentityWasGranted = Aras.Server.Security.Permissions.GrantIdentity(suIdentity)
+
+For i=0 To docHierarchyRels.getItemCount() -1
+  amlCmd = "<Item type='Document Section' action='promoteItem' id='"
+  amlCmd = amlCmd & docHierarchyRels.getItemByIndex(i).getProperty("related_id","invalid") & "' >"
+  amlCmd = amlCmd & "<state>Released</state>"
+  amlCmd = amlCmd & "</Item>"
+
+  promoteItem.loadAML(amlCmd)
+  promoteItem = promoteItem.apply()
+  
+  If promoteItem.isError() Then Return promoteItem
+Next i
+
+If suIdentityWasGranted Then Aras.Server.Security.Permissions.RevokeIdentity(suIdentity)
+
+Return Me
+]]></method_code>
+  <method_type>VB</method_type>
+  <name>DocuHierarchy PreRelease Logic</name>
+ </Item>
+</AML>

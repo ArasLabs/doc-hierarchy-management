@@ -1,0 +1,206 @@
+﻿<AML>
+ <Item type="Form" id="1703133C92114DAA9F70EAB8DF7BE897" action="add">
+  <height>200</height>
+  <name>Document Section AddNewSub</name>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>650</width>
+  <Relationships>
+   <Item type="Body" id="B5018CF18CBA44B8980366A6D5D9265E" action="add">
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Document Section AddNewSub" type="Form">1703133C92114DAA9F70EAB8DF7BE897</source_id>
+    <Relationships>
+     <Item type="Field" id="D1CE56134F394919A3B5672EC4038EF5" action="add">
+      <border_width>0</border_width>
+      <css>{$this field rule} input
+{
+  width: 80px;
+}</css>
+      <field_type>button</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Add</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>btn_add</name>
+      <sort_order>640</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>520</x>
+      <y>20</y>
+      <Relationships>
+       <Item type="Field Event" id="98CB7E29E39444CA804F3B9EB4657B00" action="add">
+        <field_event>onclick</field_event>
+        <related_id keyed_name="Document Section NewSub OK" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>Document Section NewSub OK</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="btn_add" type="Field">D1CE56134F394919A3B5672EC4038EF5</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="02A19A16E3554C27924F3637AAAFE1BC" action="add">
+      <border_width>0</border_width>
+      <css>{$this field rule} input
+{
+  width: 80px;
+}</css>
+      <field_type>button</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Cancel</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>btn_cancel</name>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>520</x>
+      <y>50</y>
+      <Relationships>
+       <Item type="Field Event" id="CAC9845D95064A7B98A855F8AA736D2E" action="add">
+        <field_event>onclick</field_event>
+        <related_id keyed_name="Form Close Field Event" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>Form Close Field Event</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="btn_cancel" type="Field">02A19A16E3554C27924F3637AAAFE1BC</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="396AD844420240E286EFFE78A3C3D5CB" action="add">
+      <border_width>0</border_width>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Description</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>description</name>
+      <sort_order>1024</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>80</textarea_cols>
+      <textarea_rows>4</textarea_rows>
+      <x>90</x>
+      <y>80</y>
+     </Item>
+     <Item type="Field" id="6E0E130A81AF47A68BD0E2A879730C45" action="add">
+      <bg_color>#ffffdd</bg_color>
+      <border_width>0</border_width>
+      <display_length>80</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Name</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>name</name>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>90</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="F7F5701828744327ACC61E28E05A2653" action="add">
+      <bg_color>#ffffdd</bg_color>
+      <border_width>0</border_width>
+      <display_length>40</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Owner</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>owned_by_id</name>
+      <sort_order>768</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>90</x>
+      <y>45</y>
+     </Item>
+     <Item type="Field" id="1CBB8CFF65F842048D0FCB39D7AC947A" action="add">
+      <border_width>0</border_width>
+      <css>{$this field rule} input
+{
+  height: 18px;
+  width: 5px;
+}</css>
+      <field_type>button</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">...</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>owned_by_search</name>
+      <sort_order>896</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>310</x>
+      <y>60</y>
+      <Relationships>
+       <Item type="Field Event" id="6E35ADB1B439462085470D3495BD2D31" action="add">
+        <field_event>onclick</field_event>
+        <related_id keyed_name="Document Section SetOwnerId" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>Document Section SetOwnerId</name>
+         </Item>
+        </related_id>
+        <sort_order>1</sort_order>
+        <source_id keyed_name="owned_by_search" type="Field">1CBB8CFF65F842048D0FCB39D7AC947A</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="3D05A29BCED44DC9A275ADC166B35979" action="add">
+      <bg_color>#ffffdd</bg_color>
+      <border_width>0</border_width>
+      <display_length>8</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Org Code</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>short_name</name>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="B5018CF18CBA44B8980366A6D5D9265E" type="Body">B5018CF18CBA44B8980366A6D5D9265E</source_id>
+      <tab_stop>0</tab_stop>
+      <x>10</x>
+      <y>10</y>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,16 @@
+<AML>
+<!-- custom Sys Admin Methods to be run as Administrators -->
+
+<!-- SYS_DocuHierarchy AdminHelper01 - SQL -->
+<Item type="Method" action="SYS_DocuHierarchy AdminHelper01" />
+
+<!-- re-generate has_sub_sections flag on all Document Section items - SQL -->
+<Item type="Method" action="SYS_DocuHierarchy AdminHelper02" />
+
+<!-- re-generate has_documents flag on all Document Section items - SQL -->
+<Item type="Method" action="SYS_DocuHierarchy AdminHelper03" />
+
+<!-- set language_effectivity to ALL where empty on "Document Section Document" rels - SQL -->
+<Item type="Method" action="SYS_DocuHierarchy AdminHelper04" />
+
+</AML>

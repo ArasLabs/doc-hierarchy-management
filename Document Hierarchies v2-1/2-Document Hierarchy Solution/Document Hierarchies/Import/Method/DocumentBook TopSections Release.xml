@@ -1,0 +1,51 @@
+﻿<AML>
+ <Item type="Method" id="92E53A952F94459D854289E1A90F70FE" action="add">
+  <comments>triggered from Lifecycle transitions</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Dim thisItem As Item = Me
+'thisItem context muast be "Document Book"
+
+'System.Diagnostics.Debugger.Break()
+
+' check conditions of Document Book item's data here 
+' And Return an error, if conditions are not met
+'...
+
+
+' promote all linked top DocSections "Released" --
+Dim topNodes As Item = Me.newItem("Document Book DocSection","get")
+topNodes.setAttribute("select","id,sort_order,related_id(keyed_name)")
+topNodes.setProperty("source_id",thisItem.getID())
+topNodes = topNodes.apply()
+
+Dim suIdentityWasGranted As Boolean
+Dim suIdentity As Aras.Server.Security.Identity 
+suIdentity = Aras.Server.Security.Identity.GetByName("Aras PLM")
+suIdentityWasGranted = Aras.Server.Security.Permissions.GrantIdentity(suIdentity)
+
+Dim i As Integer
+For i=0 To topNodes.getItemcOunt()-1
+	
+  ' get item first to see it's conditions (must be Preliminary)
+  Dim DocHierarchyNode As Item = Me.newItem("Document Section","get")
+  DocHierarchyNode.setID(topNodes.getItemByIndex(i).getProperty("related_id","invalid"))
+  DocHierarchyNode.setAttribute("serverEvents","0")
+  DocHierarchyNode.setAttribute("select","state,is_current,name,major_rev")
+  DocHierarchyNode = DocHierarchyNode.apply()
+  If DocHierarchyNode.getItemCount() > 0 And DocHierarchyNode.getProperty("state","") = "Preliminary" And DocHierarchyNode.getProperty("is_current","") = "1" Then
+    DocHierarchyNode.setAction("promoteItem")
+    DocHierarchyNode.setProperty("state","Released")
+  
+    DocHierarchyNode = DocHierarchyNode.apply()
+    If DocHierarchyNode.isError() Then Return DocHierarchyNode
+  End If
+	
+Next i
+
+If suIdentityWasGranted Then Aras.Server.Security.Permissions.RevokeIdentity(suIdentity)
+Return Me
+]]></method_code>
+  <method_type>VB</method_type>
+  <name>DocumentBook TopSections Release</name>
+ </Item>
+</AML>

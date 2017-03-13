@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui_resources>
+	<!-- +++++ Document Hierarchy +++++ -->
+	<resource key="dochierarchygrid.gridheading.col0" value="Section/Document Number"/>
+	
+	<resource key="dochierarchygrid.contextmenu.view_item" value="View Item"/>
+	<resource key="dochierarchygrid.contextmenu.view_document_files" value="View Document Files"/>
+
+	<resource key="dochierarchygrid.contextmenu.refresh_this_row" value="Refresh this Section"/>
+	<resource key="dochierarchygrid.contextmenu.lock_row_item" value="Lock"/>
+	<resource key="dochierarchygrid.contextmenu.unlock_row_item" value="Unlock"/>
+	<resource key="dochierarchygrid.contextmenu.add_existing_document" value="Add existing Document to Section"/>
+	<resource key="dochierarchygrid.contextmenu.release_sections_down" value="Release Sections (down)"/>
+	<resource key="dochierarchygrid.contextmenu.revise_sections_up" value="Revise Sections (up)"/>
+	<resource key="dochierarchygrid.contextmenu.add_sub_section" value="Add Sub Section..."/>
+	<resource key="dochierarchygrid.contextmenu.update_doc_to_latest_released" value="Update To latest Released Document"/>
+
+	<resource key="dochierarchygrid.message.loading_please_wait" value="Loading Sections, Please wait ..."/>
+	<resource key="dochierarchygrid.message.re_loading_please_wait" value="Re-Loading, Please wait ..."/>
+	<resource key="dochierarchygrid.message.expanding_all_please_wait" value="Expanding all, Please wait ..."/>
+	<resource key="dochierarchygrid.message.loading_next_level_please_wait" value="Loading next Level, Please wait ..."/>
+
+	<resource key="dochierarchygrid.message.confirm_expanding_all_large_struture" value="For large structures expanding all can take considerable time. Do you want to continue ?"/>
+	<resource key="dochierarchygrid.message.confirm_contiune_releasing_section" value="This Section and all its SubSections will be released with this action. Do you want to continue ?"/>
+	<resource key="dochierarchygrid.message.confirm_contiune_revising_section" value="This Section and all its Parent Sections, including to Book at top level, will be revised, if they are in a 'Released' status. Do you want to continue ?"/>
+	
+	<resource key="dochierarchygrid.message.unknown_error" value="An unknown error has occurred. Please contact your System Administrator"/>
+	<resource key="dochierarchygrid.message.no_released_version_of_book_found" value="No released version of Document Book: "/>
+	<resource key="dochierarchygrid.message.error_retrieving_root_item" value="Error retrieving root item! "/>
+	<resource key="dochierarchygrid.message.error_getting_released_book_of_rev" value="Error getting released Book revision! "/>
+	<resource key="dochierarchygrid.message.user_is_not_owner" value="User is not Owner! "/>
+	<resource key="dochierarchygrid.message.action_denied_must_be_owner_or_co_owner_of_book" value="Action denied !  You are not a member of Owners or Co-Owners of the top level 'Book'."/>
+	<resource key="dochierarchygrid.message.action_denied_must_be_owner_or_co_owner_of_top_section" value="Action denied !  You are not a member of Owners or Co-Owners of the top level 'Document Section'."/>
+	<resource key="dochierarchygrid.message.action_denied_on_row_type_when_eff_latest_released" value="This action is not allowed on this row type in 'latest released' view !"/>
+	<resource key="dochierarchygrid.message.error_viewing_doc_files" value="Error viewing document's files! "/>
+	<resource key="dochierarchygrid.message.error_locking_item" value="Error locking the item! "/>
+	<resource key="dochierarchygrid.message.error_unlocking_item" value="Error unlocking the item! "/>
+	<resource key="dochierarchygrid.message.error_adding_doc_to_section" value="Error adding Document to section! "/>
+	<resource key="dochierarchygrid.message.error_getting_doc_rels_of_section" value="Error getting Document relations of section!  "/>
+	<resource key="dochierarchygrid.message.parent_must_be_released_for_action" value="Parent item must be 'Released' for this action !"/>
+	<resource key="dochierarchygrid.message.error_getting_latest_released_item_by_item_number" value="Error getting latest released item by item_number! "/>
+	<resource key="dochierarchygrid.message.document_has_no_released_rev_newer_than_current_version" value="This document does not have a released revision newer than the current version !"/>
+	<resource key="dochierarchygrid.message.error_updating_new_related_id_on_rel" value="Error updating new related_id on section's document relationship! "/>
+	<resource key="dochierarchygrid.message.error_adding_sub_section" value="Error adding sub section! "/>
+	<resource key="dochierarchygrid.message.refresh_row_to_see_current_lock_status" value="This row's item is not locked ! (Refresh row to see the current lock status)'"/>
+	<resource key="dochierarchygrid.message.row_item_locked_by_other" value="This row's item is locked by someone else ! (Refresh row to see the current lock status)'"/>
+	<resource key="dochierarchygrid.message.action_not_allowed_on_rows_of_type_x" value="This action is not allowed on rows of type: "/>
+	<resource key="dochierarchygrid.message.row_item_already_locked_by_you_or_other" value="This row's item is already locked by you or by someone else! (Refresh row to see the current lock status)'"/>
+	<resource key="dochierarchygrid.message.action_only_allowed_on_rows_of_type_section" value="This action is only allowed on 'Document Section' rows !"/>
+	<resource key="dochierarchygrid.message.action_only_allowed_on_rows_of_type_document" value="This action is only allowed on 'Document' rows !"/>
+	<resource key="dochierarchygrid.message.action_not_allowed_on_root_rows" value="This action is not allowed on Root rows !"/>
+	<resource key="dochierarchygrid.message.action_denied_top_section_locked" value="Action denied !  Top level 'Document Section' is still locked."/>
+	<resource key="dochierarchygrid.message.effectivity_must_be_current_for_action" value="Effectivity must be set to 'Current Version' for this action !"/>
+	<!-- 			 Document Hierarchy  		 -->
+		
+</ui_resources>

@@ -1,0 +1,23 @@
+﻿<AML>
+ <Item type="Method" id="D7D9814ED4D442FFA2FD7D618E9CF796" action="add">
+  <comments>update header_item_type data to "Document Book" - SQL</comments>
+  <execution_allowed_to keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</execution_allowed_to>
+  <method_code><![CDATA[' Use Run Method action
+
+' Data Administration tool
+Dim SQLstr As String = ""
+Dim inn As Innovator = Me.getInnovator()
+Dim res As Item
+
+'System.Diagnostics.Debugger.Break()
+
+SQLstr = SQLstr & " UPDATE [DOCUMENT_SECTION] Set [DOCUMENT_SECTION].header_item_type='Document Book' WHERE [DOCUMENT_SECTION].header_item_type='Document Collection'"
+res = inn.applySQL(SQLstr)
+If res.isError() Then Return inn.newError(res.getErrorString())
+
+
+Return inn.newResult("DONE")]]></method_code>
+  <method_type>VB</method_type>
+  <name>SYS_DocuHierarchy AdminHelper01</name>
+ </Item>
+</AML>

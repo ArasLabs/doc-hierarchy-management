@@ -1,0 +1,24 @@
+﻿<AML>
+ <Item type="Method" id="2C879A7582A94291AD8D3BFE3B0C7DC9" action="add">
+  <comments>Utility method. Use on form's button click events</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[//--- single select mode
+var searchItemTypeName = "Identity";
+var param = { aras: top.aras, itemtypeName: searchItemTypeName, multiselect: false };
+var dlgRes = showModalDialog('searchDialog.html', param, 'dialogHeight:450px; dialogWidth:700px; status:0; help:0; resizable:1');
+if(!dlgRes) { return;}  // empty
+else
+{
+ if(!dlgRes.item){ return;}  // empty, no item selected
+}
+var resultItem = top.aras.newIOMItem("","");
+resultItem.loadAML(dlgRes.item.xml);
+window.owned_by_id = resultItem.getID();
+window.owned_by_KN = resultItem.getProperty("keyed_name","--");
+
+document.getElementsByName("owned_by_id")[0].value = window.owned_by_KN;
+return;]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>Document Section SetOwnerId</name>
+ </Item>
+</AML>

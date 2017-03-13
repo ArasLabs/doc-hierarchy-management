@@ -1,6 +1,0 @@
-add to CommonUtilties
-
-Methods:
--------
-  JS  - IsUser Member Of ItemOwner
-  VB - Copy srcItem Team to relItm

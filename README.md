@@ -27,12 +27,14 @@ Release notes/descriptions for the original project posted on the previous Aras 
 
 Release | Notes
 --------|--------
+[v2.1](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v2.1) | Improved grid loading and access controls. Document Collection is called Document Book now. Inernationalized (xml files) for toolbar. menus, messages on Folder Navigator. Download add-on import package and documentation. (imports on top of standard Aras Solutions).
 [v1.3](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v1.3) | add-on import package and conceptual overview document. (imports on top of standard Aras Solutions)
 
 #### Supported Aras Versions
 
 Project | Aras
 --------|------
+[v2.1](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v2.1) | Aras 9.4
 [v1.3](https://github.com/ArasLabs/doc-hierarchy-management/releases/tag/v1.3) | Aras 9.3
 
 > ###### *Please note: Aras Community Projects are provided on an "as-is" basis.*

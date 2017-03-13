@@ -1,0 +1,30 @@
+﻿<AML>
+ <Item type="Method" id="D5EBED28D9744B05BE36860E351BCF1A" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[//debugger;
+function displayPropTextAsIcon(propName, iconHtmlFieldName)
+{
+var icon_element;
+
+// assumes an html type form field named "{iconHtmlFieldName}" exists on this form
+// its html code must be --> <span id="{iconHtmlFieldName}" />
+icon_element = document.getElementById(iconHtmlFieldName);
+if (icon_element)
+{
+  // assumes a item bound form field named "{propName}" exists on this form
+  // and is not visible (hidden)
+  var gridIconPropValue = document.thisItem.getProperty(propName);
+  if (gridIconPropValue && gridIconPropValue !== "" && gridIconPropValue.indexOf("''") < 0)
+  {
+    icon_element.innerHTML = gridIconPropValue;
+  }
+}
+return;
+}
+
+displayPropTextAsIcon("has_files_icon","has_files_icon_display");
+displayPropTextAsIcon("has_change_icon","has_change_icon_display");]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>Show Doc Icons On Form</name>
+ </Item>
+</AML>

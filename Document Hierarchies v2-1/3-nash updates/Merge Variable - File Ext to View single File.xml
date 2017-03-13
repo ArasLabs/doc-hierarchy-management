@@ -1,0 +1,6 @@
+﻿<AML>
+ <Item type="Variable" id="BA75A13EA2034B3EA8480058983427D2" action="merge">
+  <name>File Ext to View single File</name>
+  <value>txt,pdf,jpg,jpeg,gif,tif,bmp,sldasm,sldrw,doc,xls,ppt</value>
+ </Item>
+</AML>

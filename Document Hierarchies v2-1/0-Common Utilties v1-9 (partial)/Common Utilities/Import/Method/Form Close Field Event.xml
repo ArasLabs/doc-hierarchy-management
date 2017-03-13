@@ -1,0 +1,9 @@
+﻿<AML>
+ <Item type="Method" id="C96609C8F50C42DFA22870476C278D8A" action="add">
+  <comments>Utility method. Does a simple window.close() call. Can be used for 'Cancel' button event.</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[window.close();]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>Form Close Field Event</name>
+ </Item>
+</AML>

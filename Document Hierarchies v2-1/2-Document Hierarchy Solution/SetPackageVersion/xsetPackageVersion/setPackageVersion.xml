@@ -1,0 +1,6 @@
+<AML>
+  <Item type="PackageDefinition" action="updatePackageDefinitionVersion" where="PackageDefinition.state='Released'" >
+    <name>Document Hierarchies</name>
+    <minor_rev>v2-1</minor_rev>
+  </Item>
+</AML>

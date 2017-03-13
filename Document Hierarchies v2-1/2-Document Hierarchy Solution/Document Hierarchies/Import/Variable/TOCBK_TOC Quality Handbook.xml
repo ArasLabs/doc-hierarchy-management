@@ -1,0 +1,7 @@
+﻿<AML>
+ <Item type="Variable" id="8911A110339441159F75DBC0884DF4BE" action="add">
+  <default_value>BookNumber,MajorRev</default_value>
+  <name>TOCBK_TOC Quality Handbook</name>
+  <value>DBK-00001</value>
+ </Item>
+</AML>

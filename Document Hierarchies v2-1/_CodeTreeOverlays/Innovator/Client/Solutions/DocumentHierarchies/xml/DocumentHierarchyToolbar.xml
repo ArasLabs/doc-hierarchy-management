@@ -1,0 +1,15 @@
+﻿<toolbarapplet buttonstyle="windows" buttonsize="26,25">
+   <toolbar id="toolbar">
+	<button text="Expand All" id="expandall" image="icons/24x24expandpopnode.gif" tooltip="Expand All" disabled="false" />
+	<button text="Collapse All" id="collapseall" image="icons/24x24collandpopnode.gif" tooltip="Collapse All" disabled="false" />
+	<button text="Refresh" id="refresh" image="icons/20x20refresh.gif" tooltip="Refresh Structure" disabled="false" />
+	<separator/>
+	<button text="View Item" id="open_row_item" image="icons/20x20view.gif" tooltip="View Item" disabled="false" />
+	<separator/>
+	<choice disabled="true" id="effectivity_option" tooltip="Query Options" statusmsg="Query Options" >
+	  <choiceitem id="latest_released" >Released Version of Rev</choiceitem>
+      <choiceitem id="current_config" >Current Version of Rev</choiceitem>
+	</choice>
+	<edit id="book_number_rev" label="" text="" size="15" disabled="true" />
+  </toolbar>
+</toolbarapplet>

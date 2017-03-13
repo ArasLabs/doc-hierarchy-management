@@ -1,0 +1,20 @@
+﻿<AML>
+ <Item type="Method" id="B92E34B31BAA4246AA6501C7C9189247" action="add">
+  <comments>set language_effectivity to ALL where empty on "Document Section Document" rels</comments>
+  <execution_allowed_to keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</execution_allowed_to>
+  <method_code><![CDATA[' Use Run Method action
+
+' Data Administration tool
+Dim SQLstr As String = ""
+Dim inn As Innovator = Me.getInnovator()
+'System.Diagnostics.Debugger.Break()
+
+SQLstr = SQLstr & " UPDATE [DOCUMENT_SECTION_DOCUMENT] Set [DOCUMENT_SECTION_DOCUMENT].language_effectivity='ALL' WHERE [DOCUMENT_SECTION_DOCUMENT].language_effectivity is null"
+Dim res as Item = inn.applySQL(SQLstr)
+If res.isError() Then Return inn.newError(res.getErrorString())
+
+Return inn.newResult("DONE")]]></method_code>
+  <method_type>VB</method_type>
+  <name>SYS_DocuHierarchy AdminHelper04</name>
+ </Item>
+</AML>

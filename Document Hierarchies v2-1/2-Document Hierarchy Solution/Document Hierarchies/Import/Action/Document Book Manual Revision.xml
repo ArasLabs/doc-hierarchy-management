@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="C66A861C4A7549BD959633FCCADB4B11" action="add">
+  <item_query>&lt;Item type="{@type}" id="{@id}" levels= "1" action="get" /&gt;</item_query>
+  <label xml:lang="en">Revise Book (only)</label>
+  <location>client</location>
+  <method keyed_name="DocuHierarchy StructRevise UpA" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>DocuHierarchy StructRevise UpA</name>
+   </Item>
+  </method>
+  <name>Document Book Manual Revision</name>
+  <target>none</target>
+  <type>item</type>
+ </Item>
+</AML>

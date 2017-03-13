@@ -1,0 +1,38 @@
+﻿<AML>
+ <Item type="Method" id="19A71F684A2B4D029A93E7FA1AB79D3E" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var result = new Object();
+
+result.short_name = document.getElementsByName("short_name")[0].value;
+result.name = document.getElementsByName("name")[0].value;
+result.owned_by_id = window.owned_by_id;
+result.description = document.getElementsByName("description")[0].value;
+
+if (!result.short_name || result.short_name === "")
+{
+  top.aras.AlertError("Org Code / Short Name must be set !");
+  return;
+}
+
+if (!result.name || result.name === "")
+{
+  top.aras.AlertError("Name must be set !");
+  return;
+}
+
+if (!result.owned_by_id || result.owned_by_id === "")
+{
+  top.aras.AlertError("Onwer must be set !");
+  return;
+}
+
+//return values in result object
+top.setReturnValue(result);
+
+//close the window
+top.close();
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>Document Section NewSub OK</name>
+ </Item>
+</AML>
